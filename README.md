@@ -1,80 +1,86 @@
-\# Backend - Series Tracker
+# PROYECTO-FULL-STACK-BACKEND-21151
 
+Backend del proyecto Full Stack desarrollado para la administración de series de televisión.  
+Se implementó una **API REST con Node.js, Express y PostgreSQL**, conectada a una base de datos en la nube mediante **Neon** y desplegada públicamente en **Render**.
 
+El sistema permite realizar operaciones CRUD completas y documenta todos los endpoints con Swagger.
 
-API REST para administrar series de televisión.  
+---
 
-Este backend fue desarrollado con Node.js, Express y PostgreSQL, utilizando Neon como base de datos en la nube.
+#  API en producción
 
+🔗 Backend publicado en Render:
 
+https://proyecto-full-stack-backend-21151.onrender.com
 
-El sistema fue pensado para trabajar junto a un frontend separado construido únicamente con HTML, CSS y JavaScript vanilla usando `fetch()`, cumpliendo el enfoque full stack solicitado.
+🔗 Documentación Swagger:
 
+https://proyecto-full-stack-backend-21151.onrender.com/api-docs
 
+---
 
-\---
+#  Tecnologías utilizadas
 
+- Node.js
+- Express.js
+- PostgreSQL
+- Neon Database
+- Swagger UI
+- OpenAPI 3.0
+- dotenv
+- CORS
+- Render
 
+---
 
-\## Tecnologías utilizadas
+#  Funcionalidades principales
 
+##  Gestión de series
 
+- Obtener todas las series
+- Obtener una serie por ID
+- Crear nueva serie
+- Editar serie existente
+- Eliminar serie
 
-\- Node.js
+##  Documentación profesional
 
-\- Express.js
+- Swagger UI integrado
+- Pruebas desde navegador
+- Especificación OpenAPI
 
-\- PostgreSQL
+## Producción
 
-\- Neon Database
+- Backend desplegado en Render
+- Base de datos en Neon
+- Acceso público mediante URL
 
-\- CORS
+---
 
-\- Swagger UI
-
-\- OpenAPI (YAML)
-
-\- Render (deploy backend)
-
-
-
-\---
-
-
-
-\## Estructura del proyecto
-
-
+#  Estructura del proyecto
 
 ```txt
-
-backend-series/
-
-│── src/
-
-│   ├── controllers/
-
-│   ├── db/
-
-│   ├── middleware/
-
-│   ├── routes/
-
-│   └── server.js
-
-│
-
+PROYECTO-FULL-STACK-BACKEND-21151/
 │── docs/
-
 │   └── openapi.yaml
-
 │
-
-│── .env
-
-│── .gitignore
-
+│── src/
+│   ├── controllers/
+│   │   └── seriesController.js
+│   │
+│   ├── db/
+│   │   ├── database.js
+│   │   └── init.js
+│   │
+│   ├── middleware/
+│   │   └── validarSerie.js
+│   │
+│   ├── routes/
+│   │   └── seriesRoutes.js
+│   │
+│   └── server.js
+│
 │── package.json
-
+│── package-lock.json
 │── README.md
-
+│── .gitignore
