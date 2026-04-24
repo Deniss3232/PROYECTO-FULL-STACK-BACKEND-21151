@@ -88,6 +88,10 @@ DATABASE_URL=tu_url_de_neon
 
 # Reflexion 
 Este backend permitió aplicar arquitectura REST con Express y PostgreSQL real en la nube. También fue útil documentar endpoints con Swagger y separar rutas, controladores y middleware.
+
+# imagen 
+<img width="1261" height="661" alt="image" src="https://github.com/user-attachments/assets/7518d36d-2aca-4d59-b716-f71eea3ce8e9" />
+
 #  Estructura del proyecto
 
 ```txt
