@@ -1,0 +1,133 @@
+openapi: 3.0.0
+info:
+  title: Series Tracker API
+  version: 1.0.0
+  description: API REST para administrar series usando Node.js, Express y PostgreSQL.
+servers:
+  - url: http://localhost:3000
+
+paths:
+  /series:
+    get:
+      summary: Listar series
+      parameters:
+        - name: page
+          in: query
+          schema:
+            type: integer
+          example: 1
+        - name: limit
+          in: query
+          schema:
+            type: integer
+          example: 5
+        - name: q
+          in: query
+          schema:
+            type: string
+          example: dark
+        - name: sort
+          in: query
+          schema:
+            type: string
+          example: nombre
+        - name: order
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+          example: asc
+      responses:
+        "200":
+          description: Lista de series obtenida correctamente
+    post:
+      summary: Crear una nueva serie
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SerieEntrada"
+      responses:
+        "201":
+          description: Serie creada correctamente
+        "400":
+          description: Datos inválidos
+
+  /series/{id}:
+    get:
+      summary: Obtener una serie por ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: Serie encontrada
+        "404":
+          description: Serie no encontrada
+
+    put:
+      summary: Editar una serie existente
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SerieEntrada"
+      responses:
+        "200":
+          description: Serie actualizada correctamente
+        "400":
+          description: Datos inválidos
+        "404":
+          description: Serie no encontrada
+
+    delete:
+      summary: Eliminar una serie
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        "204":
+          description: Serie eliminada correctamente
+        "404":
+          description: Serie no encontrada
+
+components:
+  schemas:
+    SerieEntrada:
+      type: object
+      required:
+        - nombre
+        - descripcion
+        - genero
+        - temporadas
+        - imagen
+      properties:
+        nombre:
+          type: string
+          example: Dark
+        descripcion:
+          type: string
+          example: Serie alemana de misterio y viajes en el tiempo.
+        genero:
+          type: string
+          example: Ciencia ficción
+        temporadas:
+          type: integer
+          example: 3
+        imagen:
+          type: string
+          example: https://ejemplo.com/imagen.jpg
