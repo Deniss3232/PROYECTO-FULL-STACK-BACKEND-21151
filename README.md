@@ -54,9 +54,40 @@ https://proyecto-full-stack-backend-21151.onrender.com/api-docs
 - Backend desplegado en Render
 - Base de datos en Neon
 - Acceso público mediante URL
-
+## Como correr localmente 
+- Clonar repositorio git clone https://github.com/Deniss3232/PROYECTO-FULL-STACK-BACKEND-21151.git
+- Entrar a carpeta cd PROYECTO-FULL-STACK-BACKEND-21151
+- instalar dependencias npm install
+- Crear archivo .env PORT=3000
+DATABASE_URL=tu_url_de_neon
+- Ejecutar servidor npm run dev
+- Abrir en el navegador http://localhost:3000
+- Swagger local http://localhost:3000/api-docs
 ---
+# Endpoints 
+- GET /series
+- GET /series/:id
+- POST /series
+- PUT /series/:id
+- DELETE /series/:id
 
+ # Cors 
+ -Se configuró CORS para permitir que el frontend publicado en Netlify consuma la API publicada en Render.
+
+ # Challenges implementados 
+ - API REST completa
+- CRUD completo
+- Swagger funcionando
+- OpenAPI YAML
+-  Validaciones server-side
+- Paginación
+- Búsqueda
+- Ordenamiento
+- PostgreSQL en Neon
+- Deploy en Render
+
+# Reflexion 
+Este backend permitió aplicar arquitectura REST con Express y PostgreSQL real en la nube. También fue útil documentar endpoints con Swagger y separar rutas, controladores y middleware.
 #  Estructura del proyecto
 
 ```txt
